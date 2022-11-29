@@ -26,26 +26,3 @@ def login():
         return render_template('account.html', full_name=records[0][1], username = username, password = password)
     except IndexError:
         return render_template('login.html', error = "Неверный логин или пароль")
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Login</title>
-</head>
-<body>
-<form action="" method="post">
-  <p>
-    <label for="username">Username</label>
-    <input type="text" name="username">
-  </p>
-  <p>
-    <label for="password">Password</label>
-    <input type="password" name="password">
-  </p>
-  <p>
-    <input type="submit">
-    <form action=""method="post">{% if error %}<p>{{error}}!</p>{% endif %}</p>
-  </p>
-</form>
-</body>
-</html>
